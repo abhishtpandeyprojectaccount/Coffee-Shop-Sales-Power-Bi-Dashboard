@@ -17,7 +17,7 @@ To help business owners understand:
 - Which stores and products drive the most revenue
 - Which days and hours are the busiest
 
-## 🛠️ Tools Used
+## 🛠️ Tools & Technologies
 
 - Power BI Desktop
 - DAX (measures and calculations)
