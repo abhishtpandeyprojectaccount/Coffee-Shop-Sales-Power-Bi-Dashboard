@@ -26,13 +26,64 @@ To help business owners understand:
 - Data Visualization
   
 ## 📁 Dataset
-Coffee shop transaction data containing:
--Date
--Time
--Store location
--Product category
--Product type
--Quantity and price.
+
+Source file: `Coffee_Shop_Sales.xlsx`
+
+Coffee shop transaction data with the following columns:
+
+- Date
+- Time
+- Store location
+- Product category
+- Product type
+- Quantity
+- Unit price
+
+## 🧮 DAX Measures
+
+Key measures used to build the dashboard KPIs and comparisons:
+
+| Measure | Purpose |
+|---|---|
+| Total Sales | Revenue = Quantity × Unit Price |
+| Total Orders | Number of transactions |
+| Total Quantity Sold | Total items sold |
+| Previous Month (PM) Sales | Sales of the previous month |
+| MoM Growth % | % change vs last month |
+| Sales Difference vs LM | Absolute change vs last month |
+| Day Type | Classifies each date as Weekday or Weekend |
+| Average Daily Sales | Reference line on the sales trend chart |
+
+### Sample DAX Code
+
+```DAX
+Total Sales =
+SUMX (
+    'Coffee Shop Sales',
+    'Coffee Shop Sales'[transaction_qty] * 'Coffee Shop Sales'[unit_price]
+)
+
+Total Orders =
+COUNTROWS ( 'Coffee Shop Sales' )
+
+Total Quantity Sold =
+SUM ( 'Coffee Shop Sales'[transaction_qty] )
+
+PM Sales =
+CALCULATE ( [Total Sales], DATEADD ( 'Calendar'[Date], -1, MONTH ) )
+
+MoM Growth % =
+DIVIDE ( [Total Sales] - [PM Sales], [PM Sales] )
+
+Sales Difference vs LM =
+[Total Sales] - [PM Sales]
+
+Day Type =
+IF ( WEEKDAY ( 'Calendar'[Date], 2 ) >= 6, "Weekend", "Weekday" )
+
+Average Daily Sales =
+AVERAGEX ( VALUES ( 'Calendar'[Date] ), [Total Sales] )
+```
 
 ## 🔑 Key Features
 
