@@ -4,11 +4,11 @@ An interactive Power BI dashboard that analyzes coffee shop sales performance ac
 
 ## 📊 Dashboard Preview
 
-![Sales Overview](images/01_sales_overview.png)
+![Sales Overview](01_sales_overview.png)
 
 | Calendar Tooltip | Day & Hour Tooltip |
 |---|---|
-| ![Calendar Tooltip](images/02_tooltip_calendar_chart.png) | ![Day Hour Tooltip](images/03_tooltip_day_hour_chart.png) |
+| ![Calendar Tooltip](02_tooltip_calendar_chart.png) | ![Day Hour Tooltip](03_tooltip_day_hour_chart.png) |
 
 ## 🎯 Project Objective
 
