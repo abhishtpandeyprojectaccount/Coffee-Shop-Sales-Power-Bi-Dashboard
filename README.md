@@ -56,10 +56,7 @@ Key measures used to build the dashboard KPIs and comparisons:
 
 ```DAX
 Total Sales =
-SUMX (
-    'Coffee Shop Sales',
-    'Coffee Shop Sales'[transaction_qty] * 'Coffee Shop Sales'[unit_price]
-)
+sum(Transactions[Sales])
 
 Total orders =
 DISTINCTCOUNT(Transactions[transaction_id])
