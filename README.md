@@ -102,12 +102,18 @@ AVERAGEX(ALLSELECTED(Transactions[transaction_date]), [Total Sales])
 └── README.md
 ```
 
-## 🚀 How to Use
+## How to Use
 
-1. Download or clone this repository
-2. Open `dashboard/coffee_shop_sales_dashboard.pbix` in Power BI Desktop
-3. If prompted, update the data source path to `data/coffee_shop_sales.xlsx`
-4. Use the month filter and hover over visuals to explore
+**Requirements:** [Power BI Desktop](https://powerbi.microsoft.com/desktop/) (free, Windows only)
 
+1. Clone or download this repository:
+   ```bash
+   git clone https://github.com/your-username/coffee-shop-sales-dashboard.git
+   ```
+2. Open `dashboard/coffee_shop_sales_dashboard.pbix` in Power BI Desktop.
+3. If Power BI shows a data source error, go to **Home → Transform data → Data source settings → Change Source**, and select `data/coffee_shop_sales.xlsx`.
+4. Click **Refresh** to load the data.
+5. Use the month filter and hover over visuals to explore the dashboard.
+   
 ## 👤 Author
 Abhisht Pandey
